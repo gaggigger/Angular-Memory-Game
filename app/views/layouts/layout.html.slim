@@ -3,6 +3,8 @@ html
   head
     title Angular Memory Game
     link(href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css' rel='stylesheet')
+    link(href='stylesheets/app.css' rel='stylesheet')
   body
-    = yield
+    = partial 'shared/nav'
+    main(id='app-stage')= yield
     script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js')

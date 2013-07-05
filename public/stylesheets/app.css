@@ -1,0 +1,77 @@
+html,
+body,
+div,
+p,
+ul {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: Arial;
+  font-size: 14px;
+  background: #34495e; }
+
+html,
+body {
+  width: 100%;
+  height: 100%; }
+
+#app-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 250px;
+  padding: 20px;
+  background: #fff;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+#app-stage {
+  position: absolute;
+  top: 0;
+  left: 250px;
+  bottom: 0;
+  right: 0;
+  box-shadow: 5px 16px 23px -9px rgba(0, 0, 0, 0.5) inset; }
+
+#app-icon {
+  font-size: 100px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  color: #e74c3c;
+  position: relative;
+  height: 200px; }
+  #app-icon:after {
+    position: absolute;
+    top: 120px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 23px;
+    color: inherit;
+    font-family: Verdana;
+    content: 'Angular Memory Game'; }
+
+.btn {
+  border: 0;
+  display: inline-block;
+  padding: 8px 14px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 17px;
+  border-radius: 5px; }
+
+.btn-emerald {
+  background: #2ecc71; }
+
+.horizontal-stretch {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+#start-game {
+  margin-top: 40px; }

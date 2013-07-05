@@ -1,0 +1,99 @@
+$wet-asphalt-color: #34495e;
+$alizarin-color: #e74c3c;
+$emerald-color: #2ecc71;
+
+@mixin box-sizing($box-sizing) {
+  -webkit-box-sizing: $box-sizing;
+     -moz-box-sizing: $box-sizing;
+          box-sizing: $box-sizing;
+}
+
+html,
+body,
+div,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial;
+  font-size: 14px;
+  background: $wet-asphalt-color;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+$app-nav-width: 250px;
+
+#app-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: $app-nav-width;
+  padding: 20px;
+  background: #fff;
+  @include box-sizing(border-box);
+}
+
+#app-stage {
+  position: absolute;
+  top: 0;
+  left: $app-nav-width;
+  bottom: 0;
+  right: 0;
+  box-shadow: 5px 16px 23px -9px rgba(0, 0, 0, .5) inset;
+}
+
+#app-icon {
+  font-size: 100px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  color: $alizarin-color;
+  position: relative;
+  height: 200px;
+
+  &:after {
+    position: absolute;
+    top: 120px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 23px;
+    color: inherit;
+    font-family: Verdana;
+    content: 'Angular Memory Game';
+  }
+}
+
+.btn {
+  border: 0;
+  display: inline-block;
+  padding: 8px 14px;
+  color: #fff;
+  font: {
+    family: inherit;
+    size: 17px;
+  };
+  border-radius: 5px;
+}
+
+.btn-emerald {
+  background: $emerald-color;
+}
+
+.horizontal-stretch {
+  width: 100%;
+  @include box-sizing(border-box);
+}
+
+#start-game {
+  margin-top: 40px;
+}
