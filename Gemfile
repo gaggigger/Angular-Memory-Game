@@ -12,6 +12,7 @@ source 'https://rubygems.org'
 
 # Project requirements
 gem 'rake'
+gem 'padrino-multi-json'
 
 # Component requirements
 gem 'slim'
