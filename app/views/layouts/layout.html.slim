@@ -1,10 +1,13 @@
 doctype 5
-html
+html(data-ng-app='App')
   head
     title Angular Memory Game
     link(href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css' rel='stylesheet')
     link(href='stylesheets/app.css' rel='stylesheet')
-  body
+  body(data-ng-controller='GameController')
     = partial 'shared/nav'
     main(id='app-stage')= yield
     script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js')
+    script(src='javascripts/app_config.js')
+    script(src='javascripts/game_service.js')
+    script(src='javascripts/game_controller.js')
