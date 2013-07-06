@@ -4,6 +4,10 @@ AngularMemoryGame::App.controllers :game do
     render 'game/index'
   end
 
+  get :cards do
+    json({:cards => Game.fetch_cards})
+  end
+
   # get :sample, :map => '/sample/url', :provides => [:any, :js] do
   #   case content_type
   #     when :js then ...
