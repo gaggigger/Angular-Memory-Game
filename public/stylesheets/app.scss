@@ -1,6 +1,8 @@
 $wet-asphalt-color: #34495e;
 $alizarin-color: #e74c3c;
 $emerald-color: #2ecc71;
+$sun-flower-color: #f1c40f;
+$peter-river-color: #3498db;
 
 @mixin box-sizing($box-sizing) {
   -webkit-box-sizing: $box-sizing;
@@ -49,6 +51,8 @@ $app-nav-width: 250px;
   bottom: 0;
   right: 0;
   box-shadow: 5px 16px 23px -9px rgba(0, 0, 0, .5) inset;
+  padding: 20px;
+  overflow: auto;
 }
 
 #app-icon {
@@ -96,4 +100,68 @@ $app-nav-width: 250px;
 
 #start-game {
   margin-top: 40px;
+}
+
+#grid {
+  list-style: none;
+  width: 720px;
+  margin: 0 auto;
+
+  .grid-item {
+    float: left;
+    width: 90px;
+    height: 90px;
+    position: relative;
+    margin: 10px;
+
+    .card {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      transition: all linear .5s;
+      box-shadow: 1px 4px 3px -2px rgba(0, 0, 0, .5);
+      background: $peter-river-color;
+      border: 3px solid #fff;
+    }
+
+    .front {
+      &:after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50px;
+        height: 16px;
+        margin-left: -25px;
+        margin-top: -8px;
+        text-align: center;
+        content: 'AMG';
+        color: #fff;
+        font-size: 16px;
+      }
+    }
+
+    .back {
+      transform: rotateY(180deg);
+    }
+
+    i[class*=" icon-"] {
+      color: #fff;
+      font-size: 50px;
+      line-height: 96px;
+      text-align: center;
+    }
+
+    &:active {
+      .front {
+        transform: rotateY(180deg);
+      }
+
+      .back {
+        transform: rotateY(0deg);
+      }
+    }
+  }
 }
