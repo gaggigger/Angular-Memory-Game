@@ -113,6 +113,7 @@ $app-nav-width: 250px;
     height: 90px;
     position: relative;
     margin: 10px;
+    opacity: .6;
 
     .card {
       position: absolute;
@@ -154,13 +155,15 @@ $app-nav-width: 250px;
       text-align: center;
     }
 
-    &:active {
+    &.active {
+      opacity: 1;
+
       .front {
         transform: rotateY(180deg);
       }
 
       .back {
-        transform: rotateY(0deg);
+        transform: rotateY(0deg) scale(1.08);
       }
     }
   }

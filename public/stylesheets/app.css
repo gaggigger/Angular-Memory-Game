@@ -87,7 +87,8 @@ body {
     width: 90px;
     height: 90px;
     position: relative;
-    margin: 10px; }
+    margin: 10px;
+    opacity: .6; }
     #grid .grid-item .card {
       position: absolute;
       top: 0;
@@ -118,7 +119,9 @@ body {
       font-size: 50px;
       line-height: 96px;
       text-align: center; }
-    #grid .grid-item:active .front {
-      transform: rotateY(180deg); }
-    #grid .grid-item:active .back {
-      transform: rotateY(0deg); }
+    #grid .grid-item.active {
+      opacity: 1; }
+      #grid .grid-item.active .front {
+        transform: rotateY(180deg); }
+      #grid .grid-item.active .back {
+        transform: rotateY(0deg) scale(1.08); }
