@@ -1,5 +1,4 @@
 ul(id='grid')
-  li(data-ng-repeat='card in cards')
-    a(class='grid-item')
-      span(class='card front')
-      i(class='card back {{ card }}')
+  li(class='grid-item' data-ng-repeat='card in cards' data-ng-click='flip(card)' data-ng-class='{active: isShown(card)}')
+    span(class='card front')
+    i(class='card back {{ card.icon }}')
