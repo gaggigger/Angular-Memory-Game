@@ -1,4 +1,4 @@
-app.factory('gameService', function($http) {
+app.factory('gameService', ['$http', function($http) {
   var cards = [];
 
   function fetchCards() {
@@ -15,4 +15,4 @@ app.factory('gameService', function($http) {
     cards: cards,
     fetchCards: fetchCards
   }
-})
+}]);
