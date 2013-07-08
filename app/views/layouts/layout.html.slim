@@ -6,6 +6,7 @@ html(data-ng-app='App')
     link(href='stylesheets/app.css' rel='stylesheet')
   body(data-ng-controller='GameController')
     = partial 'shared/nav'
+    = partial 'shared/fork_me'
     main(id='app-stage')= yield
     script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js')
     script(src='//cdnjs.cloudflare.com/ajax/libs/lodash.js/1.3.1/lodash.min.js')
