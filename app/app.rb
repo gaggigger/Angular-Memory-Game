@@ -58,5 +58,9 @@ module AngularMemoryGame
     #     render 'errors/505'
     #   end
     #
+
+    get '/' do
+      redirect url(:game, :index)
+    end
   end
 end
