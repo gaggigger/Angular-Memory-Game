@@ -3,4 +3,5 @@ ul(id='grid')
     span(class='card front')
     i(class='card back {{ card.icon }}')
 
-figure(id='num-moves' data-ng-show='hasStarted()') {{ numMoves }}
+figure(id='num-moves' data-ng-show='hasStarted()')
+  ng-pluralize(data-count='numMoves' data-when='{"0": "{{numMoves}} click", "1": "{{numMoves}} click", "other": "{{numMoves}} clicks"}')
