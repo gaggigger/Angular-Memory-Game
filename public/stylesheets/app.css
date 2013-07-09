@@ -2,7 +2,8 @@ html,
 body,
 div,
 p,
-ul {
+ul,
+figure {
   margin: 0;
   padding: 0; }
 
@@ -131,3 +132,14 @@ body {
         transform: rotateY(180deg); }
       #grid .grid-item.active .back {
         transform: rotateY(0deg) scale(1.08); }
+
+#num-moves {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background: #e74c3c;
+  color: #fff;
+  font-size: 24px;
+  font-family: Georgia;
+  line-height: 24px;
+  padding: 4px 12px 10px; }

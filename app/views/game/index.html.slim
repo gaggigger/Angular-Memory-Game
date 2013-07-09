@@ -2,3 +2,5 @@ ul(id='grid')
   li(class='grid-item' data-ng-repeat='card in cards' data-ng-click='flip(card)' data-ng-class='{active: isShown(card)}')
     span(class='card front')
     i(class='card back {{ card.icon }}')
+
+figure(id='num-moves' data-ng-show='hasStarted()') {{ numMoves }}

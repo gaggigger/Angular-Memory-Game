@@ -5,6 +5,8 @@
 app.controller('GameController', ['$scope', 'gameService', '_', function($scope, gameService, _) {
 
   $scope.cards = gameService.cards;
+  $scope.hasStarted = gameService.hasStarted;
+  $scope.numMoves = 0;
 
   var flipped = []
     , revealed = [];
@@ -12,6 +14,7 @@ app.controller('GameController', ['$scope', 'gameService', '_', function($scope,
   var MAX_SHOWN = 2;
 
   $scope.startGame = function() {
+    $scope.numMoves = 0;
     gameService.fetchCards();
   }
 
@@ -22,6 +25,8 @@ app.controller('GameController', ['$scope', 'gameService', '_', function($scope,
     flipped.push(card);
 
     if (_match(card)) revealed.push(card.icon);
+
+    $scope.numMoves++;
   }
 
   var _match = function(card) {

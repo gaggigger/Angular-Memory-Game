@@ -1,5 +1,6 @@
 app.factory('gameService', ['$http', function($http) {
-  var cards = [];
+  var cards = []
+    , started = false;
 
   function fetchCards() {
     $http
@@ -8,12 +9,18 @@ app.factory('gameService', ['$http', function($http) {
         /* 'response' is of the format
          * {config: [Object object], data: [Object object], status: [Object object], headers: [Object object]}
          */
-        angular.copy(response.data.cards, cards)
+        angular.copy(response.data.cards, cards);
+        started = true;
       });
+  }
+
+  function hasStarted() {
+    return started;
   }
 
   return {
     cards: cards,
-    fetchCards: fetchCards
+    fetchCards: fetchCards,
+    hasStarted: hasStarted
   }
 }]);
