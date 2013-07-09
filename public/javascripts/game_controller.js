@@ -16,28 +16,29 @@ app.controller('GameController', ['$scope', 'gameService', '_', function($scope,
   }
 
   $scope.flip = function(card) {
-    if ($scope._alreadyRevealed(card)) return;
+    if (_alreadyRevealed(card)) return;
     if (flipped.length === MAX_SHOWN) flipped.shift();
 
     flipped.push(card);
 
-    if ($scope._match(card)) revealed.push(card.icon);
+    if (_match(card)) revealed.push(card.icon);
   }
 
-  $scope._match = function(card) {
+  var _match = function(card) {
     var potentialMatch = _.findWhere(flipped, {icon: card.icon});
     if (!potentialMatch) return false;
     return potentialMatch.icon === card.icon && potentialMatch.index !== card.index;
   }
 
   $scope.isShown = function(card) {
-    // A card should be shown if it is being flipped
-    // or if its sibling has been revealed
-    if ($scope._alreadyRevealed(card)) return true;
+    /* A card should be shown if it is being flipped
+     * or if its sibling has been revealed
+     */
+    if (_alreadyRevealed(card)) return true;
     return !!_.findWhere(flipped, card);
   }
 
-  $scope._alreadyRevealed = function(card) {
+  var _alreadyRevealed = function(card) {
     return revealed.indexOf(card.icon) != -1
   }
 
